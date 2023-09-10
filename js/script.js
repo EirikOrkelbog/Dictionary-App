@@ -1,9 +1,12 @@
 const url = 'https://api.dictionaryapi.dev/api/v2/entries/en/';
 const output = document.querySelector('.output');
+const input = document.querySelector('#input');
 const sound = document.getElementById('sound');
 const button = document.querySelector('.search-button');
 
-button.addEventListener('click', () => {
+button.addEventListener('click', showResult);
+
+function showResult() {
 	let inputWord = document.getElementById('input').value;
 	fetch(`${url}${inputWord}`)
 		.then((response) => response.json())
@@ -35,7 +38,15 @@ button.addEventListener('click', () => {
 		.catch(() => {
 			output.innerHTML = `<h3 class="error">Try another word</h3>`;
 		})
+};
+
+input.addEventListener("keypress", function(event) {
+	if (event.key === "Enter") {
+		event.preventDefault();
+		showResult();
+	}
 });
+
 
 function playSound() {
 	sound.play();
