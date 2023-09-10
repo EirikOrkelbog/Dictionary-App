@@ -33,7 +33,7 @@ button.addEventListener('click', () => {
 			sound.setAttribute('src', `${result[0].phonetics[0].audio}`);
 		})
 		.catch(() => {
-			output.innerHTML = `<h3 class="error">Couldn't find the word</h3>`;
+			output.innerHTML = `<h3 class="error">Try another word</h3>`;
 		})
 });
 
