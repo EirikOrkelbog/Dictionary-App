@@ -29,7 +29,7 @@ body {
 	font-size: 1rem;
 }
 
-.search-box button {
+.search-button {
 	padding: 1rem 0;
 	width: 25%;
 	background-color: #ae9cff;
@@ -37,6 +37,8 @@ body {
 	outline: none;
 	color: white;
 	border-radius: .5rem;
+	font-size: 1rem;
+	cursor: pointer;
 }
 
 .output {
